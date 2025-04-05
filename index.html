@@ -8,14 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/js/charts.js" defer></script>
     <script src="js/stateMap.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6TWMHWPT8E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-6TWMHWPT8E');
-    </script>
+    <link rel="stylesheet" href="./tiles/tiles.css" />
+    <script src="./tiles/tiles.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -52,7 +46,10 @@
         <!-- Tab contents (hidden by default) -->
         <div id="tab1" class="tab-content" style="display: none">
           <h2>India Debt Analysis</h2>
-
+          <!-- Lumia-style Tiles Grid -->
+          <div id="india-debt-tiles" class="lumia-grid">
+            <!-- Tiles will be dynamically injected by tiles.js -->
+          </div>
           <div class="chart-container">
             <canvas id="indiaDebtChart"></canvas>
             <p class="chart-caption">
@@ -76,7 +73,7 @@
 
         <div id="tab3" class="tab-content" style="display: none">
           <h2>World debt</h2>
-          <p>Ths should display the world debt and compares it to India</p>
+          <p>This should display the world debt and compares it to India</p>
         </div>
       </section>
 

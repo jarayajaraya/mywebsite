@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/charts.js" defer></script>
+    <script src="js/stateMap.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-container">
+        <img src="/images/logo.png" alt="Your Website Logo" class="logo" />
+      </div>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="three-column-layout">
+      <!-- Left Column - Tabs -->
+      <section class="left-column">
+        <div class="tabs">
+          <button class="tab-button active" data-target="tab1">India</button>
+          <button class="tab-button" data-target="tab2">State Debt</button>
+          <button class="tab-button" data-target="tab3">World debt</button>
+        </div>
+      </section>
+
+      <!-- Main Column - Content Display Area -->
+      <section class="main-column" id="content-display">
+        <!-- Default content (shown initially) -->
+        <div class="default-content">
+          <h2>Welcome to My Website</h2>
+          <p>Click a tab on the left to view content.</p>
+        </div>
+
+        <!-- Tab contents (hidden by default) -->
+        <div id="tab1" class="tab-content" style="display: none">
+          <h2>India Debt Analysis</h2>
+
+          <div class="chart-container">
+            <canvas id="indiaDebtChart"></canvas>
+            <p class="chart-caption">
+              Central government debt as % of GDP (2010-2023)
+            </p>
+          </div>
+        </div>
+
+        <div id="tab2" class="tab-content" style="display: none">
+          <div id="map-container">
+            <object
+              id="india-map"
+              type="image/svg+xml"
+              data="images/india.svg"
+            ></object>
+            <div id="tooltip" class="hidden"></div>
+          </div>
+          <h2>State debt</h2>
+          <p>Here are our services...</p>
+        </div>
+
+        <div id="tab3" class="tab-content" style="display: none">
+          <h2>World debt</h2>
+          <p>Ths should display the world debt and compares it to India</p>
+        </div>
+      </section>
+
+      <!-- Right Column -->
+      <section class="right-column">
+        <h3>Sidebar</h3>
+        <p>Additional information here...</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#">Twitter</a>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

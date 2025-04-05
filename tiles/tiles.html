@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>India Debt Dashboard Tiles</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #111;
+        color: #fff;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .tile-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+      }
+
+      .tile {
+        perspective: 1000px;
+        height: 150px;
+      }
+
+      .tile-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+      }
+
+      .tile:hover .tile-inner {
+        transform: rotateY(180deg);
+      }
+
+      .tile-front,
+      .tile-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        padding: 1rem;
+        box-sizing: border-box;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+
+      .tile-back {
+        transform: rotateY(180deg);
+      }
+
+      /* Example tile styles */
+      .tile1 .tile-front {
+        background: #0078d7;
+        color: white;
+      }
+      .tile1 .tile-back {
+        background: #003f73;
+        color: white;
+      }
+
+      .tile2 .tile-front {
+        background: #e81123;
+        color: white;
+      }
+      .tile2 .tile-back {
+        background: #9a0c16;
+        color: white;
+      }
+
+      .tile3 .tile-front {
+        background: #2d7d9a;
+        color: white;
+      }
+      .tile3 .tile-back {
+        background: #1e566b;
+        color: white;
+      }
+
+      .tile4 .tile-front {
+        background: #7fba00;
+        color: black;
+      }
+      .tile4 .tile-back {
+        background: #4a6e00;
+        color: white;
+      }
+
+      .tile5 .tile-front {
+        background: #ffb900;
+        color: black;
+      }
+      .tile5 .tile-back {
+        background: #b97800;
+        color: black;
+      }
+
+      .tile6 .tile-front {
+        background: #744da9;
+        color: white;
+      }
+      .tile6 .tile-back {
+        background: #4b3371;
+        color: white;
+      }
+
+      .tile7 .tile-front {
+        background: #00b294;
+        color: black;
+      }
+      .tile7 .tile-back {
+        background: #007d6e;
+        color: white;
+      }
+
+      .tile8 .tile-front {
+        background: #b146c2;
+        color: white;
+      }
+      .tile8 .tile-back {
+        background: #6f2c79;
+        color: white;
+      }
+
+      .tile9 .tile-front {
+        background: #ff8c00;
+        color: black;
+      }
+      .tile9 .tile-back {
+        background: #b26100;
+        color: white;
+      }
+
+      .tile10 .tile-front {
+        background: #00188f;
+        color: white;
+      }
+      .tile10 .tile-back {
+        background: #000a4d;
+        color: white;
+      }
+
+      .tile11 .tile-front {
+        background: #e3008c;
+        color: white;
+      }
+      .tile11 .tile-back {
+        background: #8b0057;
+        color: white;
+      }
+
+      .tile12 .tile-front {
+        background: #00cc6a;
+        color: black;
+      }
+      .tile12 .tile-back {
+        background: #007b3c;
+        color: white;
+      }
+
+      .tile-value {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>India Economic Dashboard</h1>
+    <div class="tile-grid">
+      <div class="tile tile1">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Public Debt</div>
+            <div class="tile-value">₹155 Lakh Cr</div>
+          </div>
+          <div class="tile-back">Source: RBI 2023</div>
+        </div>
+      </div>
+
+      <div class="tile tile2">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>GDP</div>
+            <div class="tile-value">₹287 Lakh Cr</div>
+          </div>
+          <div class="tile-back">Source: MoF, 2023-24</div>
+        </div>
+      </div>
+
+      <div class="tile tile3">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Debt-to-GDP</div>
+            <div class="tile-value">53.8%</div>
+          </div>
+          <div class="tile-back">Source: IMF India Report</div>
+        </div>
+      </div>
+
+      <div class="tile tile4">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Population</div>
+            <div class="tile-value">1.43 Bn</div>
+          </div>
+          <div class="tile-back">Source: UN Estimates 2024</div>
+        </div>
+      </div>
+
+      <div class="tile tile5">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Fiscal Deficit</div>
+            <div class="tile-value">6.4%</div>
+          </div>
+          <div class="tile-back">Budget 2023</div>
+        </div>
+      </div>
+
+      <div class="tile tile6">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>External Debt</div>
+            <div class="tile-value">₹47 Lakh Cr</div>
+          </div>
+          <div class="tile-back">Source: DEA, 2023</div>
+        </div>
+      </div>
+
+      <div class="tile tile7">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Interest Payment</div>
+            <div class="tile-value">₹9.4 Lakh Cr</div>
+          </div>
+          <div class="tile-back">Union Budget 2024</div>
+        </div>
+      </div>
+
+      <div class="tile tile8">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Revenue Receipts</div>
+            <div class="tile-value">₹26.3 Lakh Cr</div>
+          </div>
+          <div class="tile-back">FY 2023-24 Estimates</div>
+        </div>
+      </div>
+
+      <div class="tile tile9">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Capital Expenditure</div>
+            <div class="tile-value">₹10 Lakh Cr</div>
+          </div>
+          <div class="tile-back">Push for Infrastructure</div>
+        </div>
+      </div>
+
+      <div class="tile tile10">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Foreign Reserves</div>
+            <div class="tile-value">$642 Bn</div>
+          </div>
+          <div class="tile-back">RBI 2024</div>
+        </div>
+      </div>
+
+      <div class="tile tile11">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Inflation Rate</div>
+            <div class="tile-value">5.2%</div>
+          </div>
+          <div class="tile-back">CPI - March 2024</div>
+        </div>
+      </div>
+
+      <div class="tile tile12">
+        <div class="tile-inner">
+          <div class="tile-front">
+            <div>Unemployment</div>
+            <div class="tile-value">7.45%</div>
+          </div>
+          <div class="tile-back">CMIE Jan 2024</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
